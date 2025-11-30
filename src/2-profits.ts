@@ -1,4 +1,7 @@
-export function yearlyProfitCalculator(startAmount, interestRate) {
+export function yearlyProfitCalculator(
+  startAmount: number,
+  interestRate: number
+): number {
   const tax = 19;
   const profit =
     startAmount * ((100 + interestRate) / 100 - 1) * ((100 - tax) / 100);
