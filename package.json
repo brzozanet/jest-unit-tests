@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,10 @@
   },
   "homepage": "https://github.com/brzozanet/jest-unit-tests#readme",
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "jest": "^30.2.0",
     "nodemon": "^3.1.11",
+    "ts-jest": "^29.4.5",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
