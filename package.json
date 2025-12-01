@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/brzozanet/jest-unit-tests/issues"
   },
-  "homepage": "https://github.com/brzozanet/jest-unit-tests#readme"
+  "homepage": "https://github.com/brzozanet/jest-unit-tests#readme",
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.11",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
 }
