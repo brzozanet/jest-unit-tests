@@ -5,10 +5,3 @@ export function greetEveryone(
     ({ name, surname }) => `Cześć ${name} ${surname}! Miło Cię widzieć`
   );
 }
-
-const person = [
-  { name: "Paweł", surname: "Brzozowski" },
-  { name: "Anna", surname: "Sterkowicz" },
-];
-
-console.log(greetEveryone(person));
