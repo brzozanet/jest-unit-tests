@@ -1,4 +1,4 @@
-export function cancellableDelay(timeInSeconds = 5, callback) {
+export function cancellableDelay(timeInSeconds = 5, callback: () => void) {
   console.log(
     `Ok, funkcję uruchomię za ${timeInSeconds} sekund. No chyba, że przerwiesz!`
   );
