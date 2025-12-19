@@ -1,24 +1,24 @@
-import { addToShoppingList, shoppingList } from "../src/4-shoppingList";
+import { addToShoppingList, getNewShoppingList } from "../src/4-shoppingList";
 
-const sampleFirstProduct = "pastylki pudrowe";
-const sampleSecondProduct = "torebka na prezent";
-const sampleThirdProduct = "ketchup do pizzy";
+const sampleFirstProduct = "czekolada";
+const sampleSecondProduct = "pomidory";
 
 test("Czy element zostaje dodany do listy", () => {
-  addToShoppingList(sampleFirstProduct);
-  expect(shoppingList).toContain("pastylki pudrowe");
+  const shoppingList = getNewShoppingList();
+  addToShoppingList(shoppingList, sampleFirstProduct);
+  expect(shoppingList).toContain("czekolada");
 });
 
 test("Czy duplikaty nie są dodawane", () => {
-  shoppingList.length = 0;
-  addToShoppingList(sampleFirstProduct);
-  addToShoppingList(sampleFirstProduct);
+  const shoppingList = getNewShoppingList();
+  addToShoppingList(shoppingList, sampleFirstProduct);
+  addToShoppingList(shoppingList, sampleFirstProduct);
   expect(shoppingList.length).toBe(1);
 });
 
 test("Czy tablica ma odpowiednią długość po dodaniu", () => {
-  shoppingList.length = 0;
-  addToShoppingList(sampleSecondProduct);
-  addToShoppingList(sampleThirdProduct);
+  const shoppingList = getNewShoppingList();
+  addToShoppingList(shoppingList, sampleFirstProduct);
+  addToShoppingList(shoppingList, sampleSecondProduct);
   expect(shoppingList.length).toBe(2);
 });
