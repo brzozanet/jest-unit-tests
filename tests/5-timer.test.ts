@@ -1,10 +1,10 @@
-// import { cancellableDelay } from "../src/5-timer";
+import { cancellableDelay } from "../src/5-timer"
 
-// jest.useFakeTimers();
+const callback = jest.fn()
+jest.useFakeTimers()
 
-// test("Wykonanie funkcji po określonym czasie", () => {
-//   const callback = jest.fn();
-//   cancellableDelay(3, callback);
-//   jest.advanceTimersByTime(3000);
-//   expect(callback).toHaveBeenCalledTimes(1);
-// });
+test("Checking the fn call after a delay", () => {
+  cancellableDelay(1, callback)
+  jest.advanceTimersByTime(1000)
+  expect(callback).toHaveBeenCalled()
+})
