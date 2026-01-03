@@ -8,8 +8,12 @@ export function getExchangeRate(amountInPln: number): Promise<string> {
 
 // Dependency Injection
 
-export function getExchangeRateDi(amountInPln: number, fetch) {
-  return fetch(`https://...`) // ← UŻYWAMY fetchFn do pobrania danych
+export function getExchangeRateDi(amountInPln: number, fetchFunction = fetch) {
+  return fetchFunction(
+    `https://currencies.com/?from=PLN&to=USD&amount=${amountInPln}`
+  )
     .then((response) => response.json())
-    .then(({ exchangeRate }) => `Obecny kurs...`); // ← ZWRACAMY string
+    .then(
+      ({ exchangeRate }) => `Obecny kurs wymiany PLN na USD to: ${exchangeRate}`
+    );
 }
