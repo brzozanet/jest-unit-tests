@@ -18,3 +18,8 @@ export function cancellableDelay(timeInSeconds = 5, callback: () => void) {
     clearTimeout(timer);
   };
 }
+
+// const cancel = cancellableDelay(5, () => console.log("Done!"));
+// // Po 2 sekundach:
+// setTimeout(() => cancel(), 2000);
+// // Anuluje timer przed upłynięciem 5s
