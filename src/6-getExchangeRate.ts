@@ -5,3 +5,11 @@ export function getExchangeRate(amountInPln: number): Promise<string> {
       ({ exchangeRate }) => `Obecny kurs wymiany PLN na USD to: ${exchangeRate}`
     );
 }
+
+// Dependency Injection
+
+export function getExchangeRateDi(amountInPln: number, fetch) {
+  return fetch(`https://...`) // ← UŻYWAMY fetchFn do pobrania danych
+    .then((response) => response.json())
+    .then(({ exchangeRate }) => `Obecny kurs...`); // ← ZWRACAMY string
+}
