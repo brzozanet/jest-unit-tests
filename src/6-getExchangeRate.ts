@@ -1,19 +1,17 @@
-export function getExchangeRate(amountInPln: number): Promise<string> {
-  return fetch(`https://currencies.com/?from=PLN&to=USD&amount=${amountInPln}`)
-    .then((response) => response.json())
-    .then(
-      ({ exchangeRate }) => `Obecny kurs wymiany PLN na USD to: ${exchangeRate}`
-    );
+type ExchangeRateResponse = { exchangeRate: number };
+
+async function getData(amountInPln: number): Promise<number> {
+  const response = await fetch(
+    `https://currencies.com/?from=PLN&to=USD&amount=${amountInPln}`
+  );
+  const data: ExchangeRateResponse = await response.json();
+  return data.exchangeRate;
 }
 
-// Dependency Injection
-
-export function getExchangeRateDi(amountInPln: number, fetchFunction = fetch) {
-  return fetchFunction(
-    `https://currencies.com/?from=PLN&to=USD&amount=${amountInPln}`
-  )
-    .then((response) => response.json())
-    .then(
-      ({ exchangeRate }) => `Obecny kurs wymiany PLN na USD to: ${exchangeRate}`
-    );
+export async function showExchangeRate(
+  amountInPln: number,
+  getDataFn = getData
+): Promise<void> {
+  const result = await getDataFn(amountInPln);
+  console.log(`Obecny kurs wymiany PLN na USD to: ${result}`);
 }
