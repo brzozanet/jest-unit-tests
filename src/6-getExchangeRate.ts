@@ -1,6 +1,6 @@
 type ExchangeRateResponse = { exchangeRate: number };
 
-async function getData(amountInPln: number): Promise<number> {
+export async function loadCurrencyData(amountInPln: number): Promise<number> {
   const response = await fetch(
     `https://currencies.com/?from=PLN&to=USD&amount=${amountInPln}`
   );
@@ -8,10 +8,10 @@ async function getData(amountInPln: number): Promise<number> {
   return data.exchangeRate;
 }
 
-export async function showExchangeRate(
+export async function getExchangeRate(
   amountInPln: number,
-  getDataFn = getData
+  loadCurrencyDataFn = loadCurrencyData
 ): Promise<void> {
-  const result = await getDataFn(amountInPln);
+  const result = await loadCurrencyDataFn(amountInPln);
   console.log(`Obecny kurs wymiany PLN na USD to: ${result}`);
 }
