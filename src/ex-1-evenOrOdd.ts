@@ -1,5 +1,5 @@
-export function evenOrOdd(num) {
-  return num % 2 === 0 ? "even" : "odd";
+export function evenOrOdd(number: number): "even" | "odd" {
+  return number % 2 === 0 ? "even" : "odd";
 }
 
 // Twoim zadaniem jest napisanie dwóch testów jednostkowych:
