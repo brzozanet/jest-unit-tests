@@ -1,15 +1,12 @@
 import { evenOrOdd } from "../src/ex-1-evenOrOdd";
 
 test("Proper find even numbers", () => {
-  const sampleEvenNumber = 0;
-  const expectedResult = "even";
-
-  expect(evenOrOdd(sampleEvenNumber)).toBe(expectedResult);
+  expect(evenOrOdd(2)).toBe("even");
+  expect(evenOrOdd(0)).toBe("even");
+  expect(evenOrOdd(-2)).toBe("even");
 });
 
 test("Proper find odd numbers", () => {
-  const sampleOddNumber = 1;
-  const expectedResult = "odd";
-
-  expect(evenOrOdd(sampleOddNumber)).toBe(expectedResult);
+  expect(evenOrOdd(1)).toBe("odd");
+  expect(evenOrOdd(-3)).toBe("odd");
 });
