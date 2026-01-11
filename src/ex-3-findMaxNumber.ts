@@ -1,4 +1,4 @@
-export function findMaxNumber(numbers) {
+export function findMaxNumber(numbers: number[]): number {
   if (!Array.isArray(numbers) || numbers.length === 0) {
     throw new Error("Input must be a non-empty array");
   }
