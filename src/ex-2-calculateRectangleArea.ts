@@ -1,4 +1,4 @@
-export function calculateRectangleArea(length, width) {
+export function calculateRectangleArea(length: number, width: number): number {
   if (
     typeof length !== "number" ||
     typeof width !== "number" ||
