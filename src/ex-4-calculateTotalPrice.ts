@@ -15,7 +15,7 @@ export function calculateTotalPrice(cartItems: CartItem[]): number {
       item.quantity <= 0
     ) {
       throw new Error(
-        "Invalid item format. Each item must have a valid price and quantity."
+        "Invalid item format. Each item must have a valid price and quantity"
       );
     }
     totalPrice += item.price * item.quantity;
@@ -27,4 +27,5 @@ export function calculateTotalPrice(cartItems: CartItem[]): number {
 // Twoim zadaniem jest napisanie następujących jednostkowych:
 // Jeden, który sprawdzi czy funkcja poprawnie oblicza całkowitą wartość koszyka.
 // Drugi, który sprawdzi czy funkcja zgłasza wyjątek, gdy podamy jej w argumencie coś innego niż tablicę.
-// Dodatkowe testy, które sprawdzą czy funkcja poprawnie reaguje, gdy przekażemy jej niepoprawne obiekty reprezentujące produkty w koszyku.
+// Dodatkowe testy, które sprawdzą czy funkcja poprawnie reaguje, gdy przekażemy jej niepoprawne obiekty
+//  reprezentujące produkty w koszyku.
