@@ -1,4 +1,6 @@
-export function calculateTotalPrice(cartItems) {
+type CartItem = { price: number; quantity: number };
+
+export function calculateTotalPrice(cartItems: CartItem[]): number {
   if (!Array.isArray(cartItems)) {
     throw new Error("Cart items must be provided as an array");
   }
