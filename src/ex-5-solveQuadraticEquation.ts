@@ -1,4 +1,4 @@
-export function solveQuadraticEquation(a, b, c) {
+export function solveQuadraticEquation(a: number, b: number, c: number) {
   if (a === 0) {
     throw new Error('Coefficient "a" must not be zero');
   }
@@ -19,6 +19,8 @@ export function solveQuadraticEquation(a, b, c) {
 }
 
 // Twoim zadaniem jest napisanie następujących jednostkowych:
-// Jeden, który sprawdzi czy funkcja poprawnie znajduje dwa rozwiazania funkcji kwadatowej (np. dla a = 1, b = -3, c = 2).
-// Drugi, który sprawdzi czy funkcja poprawnie znajduje pojedyńcze rozwiązanie funkcji kwadartowej (np. dla a = 1, b = -2, c = 1).
+// Jeden, który sprawdzi czy funkcja poprawnie znajduje dwa rozwiazania funkcji kwadatowej 
+// (np. dla a = 1, b = -3, c = 2).
+// Drugi, który sprawdzi czy funkcja poprawnie znajduje pojedyńcze rozwiązanie funkcji kwadartowej 
+// (np. dla a = 1, b = -2, c = 1).
 // Dodatkowe testy, które sprawdzą czy funkcja poprawnie reaguje, gdy przekażemy jej niepoprawne dane.
