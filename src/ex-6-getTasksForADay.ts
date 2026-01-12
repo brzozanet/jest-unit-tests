@@ -26,6 +26,8 @@ export function getTasksForADay() {
   }
 }
 
+console.log(getTasksForADay());
+
 // Twoim zadaniem jest napisanie testów jednoskowych sprawdzających czy funkcja zwraca poprawne zadania
 // dla odpowiednich dni tygodnia i pór roku. Zastosuj Dependency Injection, aby poprawić kod funkcji tak,
 // aby był testowalny.
